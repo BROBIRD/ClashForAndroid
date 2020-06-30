@@ -21,10 +21,6 @@ gradle-app.setting
 
 # KeyStore
 *.keystore
-*.jks
-
-# gradle
-.gradle
 
 # clion cmake build
 cmake-build-*

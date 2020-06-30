@@ -28,19 +28,20 @@ jobs:
 #            echo "y" | sudo $ANDROID_HOME/tools/bin/sdkmanager 'platforms;android-29'
       - name: set up NDK
         env:
-          ndk_version: android-ndk-r20b
+          ndk_version: android-ndk-r21
         run: |
           curl --silent --show-error --location --fail --retry 3 --output /tmp/${ndk_version}.zip https://dl.google.com/android/repository/${ndk_version}-linux-x86_64.zip
           sudo unzip -q /tmp/${ndk_version}.zip -d /opt/android
           rm /tmp/${ndk_version}.zip
           touch /home/runner/work/ClashForAndroid/ClashForAndroid/local.properties
-          echo "ndk.dir=/opt/android/android-ndk-r20b" >> /home/runner/work/ClashForAndroid/ClashForAndroid/local.properties
+          echo "ndk.dir=/opt/android/${ndk_version}" >> /home/runner/work/ClashForAndroid/ClashForAndroid/local.properties
       - name: Build with Gradle
         env:
           KEYSTORE_PWD: ${{ secrets.KEYSTORE_PWD }}
           KEY_PWD: ${{ secrets.KEY_PWD }}
-        run: ./gradlew assembleRelease
+        run: ./gradlew aR
       - name: Prepare APKs
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           mkdir upload
           cp app/build/outputs/apk/release/*.apk upload
