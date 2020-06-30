@@ -115,13 +115,9 @@
     <string name="reverse">反转</string>
     <string name="clash">ClashR</string>
     <string name="clash_for_android">ClashR for Android</string>
-    <string name="contacts">联系我们</string>
-    <string name="email">E-Mail</string>
     <string name="sources">源代码</string>
     <string name="telegram_channel">Telegram 频道</string>
     <string name="github_issues">Github Issues</string>
-    <string name="format_seconds">%d 秒</string>
-    <string name="copied">已复制</string>
     <string name="tips_profile"><![CDATA[仅接受 <strong>ClashR 配置文件</strong> <br />其中包含了 <strong>代理, 代理组 和 规则</strong>]]></string>
     <string name="application_broken_description"><![CDATA[这通常意味着您使用来自 <strong>Google Play</strong> 的副本, 但是生成该副本的应用未能正确处理 <strong>分包机制</strong><br />这意味着您获取的是 <strong>应用的一部分</strong>]]></string>
     <string name="learn_more_about_split_apks">了解更多关于分包机制</string>
